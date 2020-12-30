@@ -1,0 +1,55 @@
+{
+    "id": 2,
+    "type": "page",
+    "date": "2020-12-17T08:01:58",
+    "modified": "2020-12-17T08:01:58",
+    "link": "/parent-page/page-2",
+    "parent": 1,
+    "excerpt": "This is an example excerpt.",
+    "content": {
+        "components": [{
+                "type": "Typography",
+                "attributes": {
+                    "align": "left",
+                    "variant": "h1"
+                },
+                "children": ["dit is een text"]
+            },
+            {
+                "type": "Card",
+                "attributes": {},
+                "children": [{
+                        "type": "CardHeader",
+                        "children": [{
+                                "type": "Icon",
+                                "attributes": {}
+                            },
+                            "Dit is een tekstje"
+                        ]
+                    },
+                    {
+                        "type": "CardMedia",
+                        "attributes": {
+                            "src": "/assets/images/image.png"
+                        }
+                    },
+                    {
+                        "type": "CardContent",
+                        "attributes": {},
+                        "children": [{
+                            "type": "Typography",
+                            "attributes": {
+                                "variant": "caption"
+                            },
+                            "children": ["Ik ben een Kerstbal."]
+                        }]
+                    },
+                    {
+                        "type": "CardActions",
+                        "attributes": {}
+                    }
+                ]
+            }
+        ]
+    }
+}

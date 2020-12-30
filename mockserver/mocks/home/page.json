@@ -1,0 +1,301 @@
+{
+    "type": "page",
+    "date": "2020-12-30T10:32:45",
+    "modified": "2020-12-30T10:32:45",
+    "link": "/home",
+    "content": {
+        "components": [{
+                "type": "Card",
+                "attributes": {},
+                "children": [{
+                        "type": "CardHeader",
+                        "children": [{
+                                "type": "Icon",
+                                "attributes": {}
+                            },
+                            "Mijn Zaken"
+                        ]
+                    },
+                    {
+                        "type": "CardMedia",
+                        "attributes": {
+                            "src": "/assets/images/image.png"
+                        }
+                    },
+                    {
+                        "type": "CardContent",
+                        "attributes": {},
+                        "children": [{
+                            "type": "Typography",
+                            "attributes": {
+                                "variant": "caption"
+                            },
+                            "children": ["De status van uw aanvragen en bezwaren"]
+                        }]
+                    },
+                    {
+                        "type": "CardActions",
+                        "attributes": {}
+                    }
+                ]
+            },
+            {
+                "type": "Card",
+                "attributes": {},
+                "children": [{
+                        "type": "CardHeader",
+                        "children": [{
+                                "type": "Icon",
+                                "attributes": {}
+                            },
+                            "Parkeren"
+                        ]
+                    },
+                    {
+                        "type": "CardMedia",
+                        "attributes": {
+                            "src": "/assets/images/image.png"
+                        }
+                    },
+                    {
+                        "type": "CardContent",
+                        "attributes": {},
+                        "children": [{
+                            "type": "Typography",
+                            "attributes": {
+                                "variant": "caption"
+                            },
+                            "children": ["Parkeervergunning, -tegoed en naheffingen"]
+                        }]
+                    },
+                    {
+                        "type": "CardActions",
+                        "attributes": {}
+                    }
+                ]
+            },
+            {
+                "type": "Card",
+                "attributes": {},
+                "children": [{
+                        "type": "CardHeader",
+                        "children": [{
+                                "type": "Icon",
+                                "attributes": {}
+                            },
+                            "Belastingzaken"
+                        ]
+                    },
+                    {
+                        "type": "CardMedia",
+                        "attributes": {
+                            "src": "/assets/images/image.png"
+                        }
+                    },
+                    {
+                        "type": "CardContent",
+                        "attributes": {},
+                        "children": [{
+                            "type": "Typography",
+                            "attributes": {
+                                "variant": "caption"
+                            },
+                            "children": ["Informatie over uw belastingaanslagen"]
+                        }]
+                    },
+                    {
+                        "type": "CardActions",
+                        "attributes": {}
+                    }
+                ]
+            },
+            {
+                "type": "Card",
+                "attributes": {},
+                "children": [{
+                        "type": "CardHeader",
+                        "children": [{
+                                "type": "Icon",
+                                "attributes": {}
+                            },
+                            "Erfpacht"
+                        ]
+                    },
+                    {
+                        "type": "CardMedia",
+                        "attributes": {
+                            "src": "/assets/images/image.png"
+                        }
+                    },
+                    {
+                        "type": "CardContent",
+                        "attributes": {},
+                        "children": [{
+                            "type": "Typography",
+                            "attributes": {
+                                "variant": "caption"
+                            },
+                            "children": ["Uw erfpacht en betaalmogelijkheden"]
+                        }]
+                    },
+                    {
+                        "type": "CardActions",
+                        "attributes": {}
+                    }
+                ]
+            },
+            {
+                "type": "Card",
+                "attributes": {},
+                "children": [{
+                        "type": "CardHeader",
+                        "children": [{
+                                "type": "Icon",
+                                "attributes": {}
+                            },
+                            "WOZ"
+                        ]
+                    },
+                    {
+                        "type": "CardMedia",
+                        "attributes": {
+                            "src": "/assets/images/image.png"
+                        }
+                    },
+                    {
+                        "type": "CardContent",
+                        "attributes": {},
+                        "children": [{
+                            "type": "Typography",
+                            "attributes": {
+                                "variant": "caption"
+                            },
+                            "children": ["Informatie over uw WOZ-waarde"]
+                        }]
+                    },
+                    {
+                        "type": "CardActions",
+                        "attributes": {}
+                    }
+                ]
+            },
+            {
+                "type": "Card",
+                "attributes": {},
+                "children": [{
+                        "type": "CardHeader",
+                        "children": [{
+                                "type": "Icon",
+                                "attributes": {}
+                            },
+                            "Basisregistratie"
+                        ]
+                    },
+                    {
+                        "type": "CardMedia",
+                        "attributes": {
+                            "src": "/assets/images/image.png"
+                        }
+                    },
+                    {
+                        "type": "CardContent",
+                        "attributes": {},
+                        "children": [{
+                            "type": "Typography",
+                            "attributes": {
+                                "variant": "caption"
+                            },
+                            "children": ["Uw geregistreerde persoonsgegevens"]
+                        }]
+                    },
+                    {
+                        "type": "CardActions",
+                        "attributes": {}
+                    }
+                ]
+            },
+            {
+                "type": "Card",
+                "attributes": {},
+                "children": [{
+                        "type": "CardHeader",
+                        "children": [{
+                                "type": "Icon",
+                                "attributes": {}
+                            },
+                            "Berichtenbox"
+                        ]
+                    },
+                    {
+                        "type": "CardMedia",
+                        "attributes": {
+                            "src": "/assets/images/image.png"
+                        }
+                    },
+                    {
+                        "type": "CardContent",
+                        "attributes": {},
+                        "children": [{
+                            "type": "Typography",
+                            "attributes": {
+                                "variant": "caption"
+                            },
+                            "children": ["Bekijk hier de instellingen van uw berichtenbox"]
+                        }]
+                    },
+                    {
+                        "type": "CardActions",
+                        "attributes": {}
+                    }
+                ]
+            },
+            {
+                "type": "Card",
+                "attributes": {},
+                "children": [{
+                        "type": "CardHeader",
+                        "children": [{
+                                "type": "Icon",
+                                "attributes": {}
+                            },
+                            "Contactgegevens"
+                        ]
+                    },
+                    {
+                        "type": "CardMedia",
+                        "attributes": {
+                            "src": "/assets/images/image.png"
+                        }
+                    },
+                    {
+                        "type": "CardContent",
+                        "attributes": {},
+                        "children": [{
+                            "type": "Typography",
+                            "attributes": {
+                                "variant": "caption"
+                            },
+                            "children": ["Bekijk en wijzig uw contactgegevens"]
+                        }]
+                    },
+                    {
+                        "type": "CardActions",
+                        "attributes": {}
+                    }
+                ]
+            },
+            {
+                "type": "Container",
+                "attributes": {},
+                "children": [{
+                    "type": "Button",
+                    "attributes": {
+                        "variant": "outlined",
+                        "size": "small"
+                    },
+                    "children": ["Help"]
+                }]
+            }
+        ]
+    }
+}
