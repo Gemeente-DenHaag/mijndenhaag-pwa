@@ -10,18 +10,13 @@ const port = 3301
 const server = http.createServer((req, res) => {
     res.statusCode = 200 //Requests are successfull by default
 
-    if(req.url.includes(".png") || req.url.includes(".jpeg") || req.url.includes(".jpg") || req.url.includes(".ico"))
-    {
+    if (req.url.includes(".png") || req.url.includes(".jpeg") || req.url.includes(".jpg") || req.url.includes(".ico")) {
         res.setHeader('Content-Type', 'image/*') //We are returning an image
-        handleRequest(`./mocks/assets/images${req.url}`, res)
-    }
-    else if(req.url.length <= 1)
-    {
+        handleRequest(`./mocks/${req.url}`, res)
+    } else if (req.url.length <= 1) {
         res.setHeader('Content-Type', 'application/json') //We are returning json
         handleRequest("./mocks/page.json", res)
-    }
-    else
-    {
+    } else {
         res.setHeader('Content-Type', 'application/json') //We are returning json
         handleRequest(`./mocks/${req.url}/page.json`, res)
     }
@@ -39,18 +34,14 @@ server.listen(port, hostname, () => {
  * @param {*} path: The path of the requested file
  * @param {*} res: The response object 
  */
-function handleRequest(path, res)
-{
+function handleRequest(path, res) {
     fs.readFile(path, 'utf8', (err, data) => {
         if (err) { //Handling of failed requests
             console.error(err)
-            
-            if(err.code == "ENOENT")
-            {
+
+            if (err.code == "ENOENT") {
                 res.statusCode = 404 //If the file cannot be found we return a 404 error
-            }
-            else
-            {
+            } else {
                 res.statusCode = 500 //Other errors result in an error 500
             }
             res.end()
