@@ -12,13 +12,13 @@ const server = http.createServer((req, res) => {
 
     if (req.url.includes(".png") || req.url.includes(".jpeg") || req.url.includes(".jpg") || req.url.includes(".ico")) {
         res.setHeader('Content-Type', 'image/*') //We are returning an image
-        handleRequest(`./mocks/${req.url}`, res)
+        handleRequest(`./mocks${req.url}`, res, true)
     } else if (req.url.length <= 1) {
         res.setHeader('Content-Type', 'application/json') //We are returning json
-        handleRequest("./mocks/page.json", res)
+        handleRequest("./mocks/page.json", res, false)
     } else {
         res.setHeader('Content-Type', 'application/json') //We are returning json
-        handleRequest(`./mocks/${req.url}/page.json`, res)
+        handleRequest(`./mocks/${req.url}/page.json`, res, false)
     }
 })
 
@@ -33,9 +33,10 @@ server.listen(port, hostname, () => {
  * Handle the request with the given path and response
  * @param {*} path: The path of the requested file
  * @param {*} res: The response object 
+ * @param {*} image: True if response is an image.
  */
-function handleRequest(path, res) {
-    fs.readFile(path, 'utf8', (err, data) => {
+function handleRequest(path, res, image) {
+    fs.readFile(path, (err, data) => {
         if (err) { //Handling of failed requests
             console.error(err)
 
@@ -47,6 +48,13 @@ function handleRequest(path, res) {
             res.end()
             return
         }
-        res.end(data) //Return our request with data
+        if (image)
+        {
+            res.end(data, 'binary') //Return our request with data
+        }
+        else
+        {
+            res.end(data) //Return our request with data
+        }
     })
 }
