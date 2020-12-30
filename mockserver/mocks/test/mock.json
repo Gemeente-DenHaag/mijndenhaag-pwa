@@ -1,0 +1,38 @@
+{
+    "title": "test",
+    "subTitle": "een testpagina",
+    "updated": "01-01-1970",
+    "breadcrumbs": [
+        {
+            "title": "home",
+            "url": "/home"
+        },
+        {
+            "title": "help",
+            "url": "/home/help"
+        }
+    ],
+    "content":[
+        {
+            "component": "typography",
+            "variant": "h1",
+            "children": [
+                "This is a text.",
+                {
+                    "Other components": ""
+                }
+            ]
+        },
+        {
+            "component": "card",
+            "variant": "elevation",
+            "children": [
+                {
+                    "component": "cardheader",
+                    "title": "this is a card",
+                    "subHeader": "This is a subHeader"
+                }
+            ]
+        }
+    ]
+}

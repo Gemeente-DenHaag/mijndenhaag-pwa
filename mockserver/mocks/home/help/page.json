@@ -1,0 +1,53 @@
+{
+    "type": "page",
+    "date": "2020-12-17T08:01:58",
+    "modified": "2020-12-17T08:01:58",
+    "link": "/home/help",
+    "parent": 1,
+    "excerpt": "This is an example help page.",
+    "content": [{
+            "type": "Typography",
+            "attributes": {
+                "align": "left",
+                "variant": "h1"
+            },
+            "children": ["Help"]
+        },
+        {
+            "type": "Typography",
+            "attributes": {
+                "align": "left",
+                "variant": "subtitle"
+            },
+            "children": ["Hier vind U informatie over de opbouw van de website, waar U wat kunt vinden en hoe U de website navigeert."]
+        },
+        {
+            "type": "Container",
+            "attributes": {
+                "fixed": "true"
+            },
+            "children": [{
+                    "type": "Typography",
+                    "attributes": {
+                        "variant": "h2"
+                    },
+                    "children": ["Home-scherm"]
+                },
+                {
+                    "type": "Typography",
+                    "attributes": {
+                        "variant": "body1"
+                    },
+                    "children": ["Op de home pagina vindt U een aantal knoppen met links naar alle processen en informatie die te beschikken valt op de website van MijnDenHaag."]
+                },
+                {
+                    "type": "Typography",
+                    "attributes": {
+                        "variant": "body1"
+                    },
+                    "children": ["Op elke knop staat een korte samenvatting over wat de bijbehorende pagina inhoud, wat voor functionaliteit erachter zit en welke informatie U op de pagina kunt bemachtigen."]
+                }
+            ]
+        }
+    ]
+}
