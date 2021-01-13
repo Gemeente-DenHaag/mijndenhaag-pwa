@@ -2,6 +2,7 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 import path from 'path'
 import got from 'got'
+import parser from './src/parser'
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
@@ -13,19 +14,20 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 
 exports.createPages = async ({ actions, reporter }) => {
   const { createPage } = actions
-
   try {
     const response = await got('http://localhost:3301/home')
+    
     let data = JSON.parse(response.body)
+  
+    let components: Array<React.Component> = parser(data.pageContext)
+    console.log(components);
 
-    const index = path.resolve(`src/templates/index.tsx`)
-    console.log(data);
     createPage({
       path: data.link,
-      component: index,
-      context: data
+      component: path.resolve(`src/templates/index.tsx`),
+      context: components
     })
   } catch (error) {
-    console.log(error.response.body)
+    console.log(error)
   }
 }
