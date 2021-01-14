@@ -18,9 +18,7 @@ exports.createPages = async ({ actions, reporter }) => {
     const response = await got('http://localhost:3301/home')
     
     let data = JSON.parse(response.body)
-  
-    let components: Array<React.Component> = parser(data.pageContext)
-    console.log(components);
+    let components: Array<React.Component> = parser(data)
 
     createPage({
       path: data.link,
