@@ -3,8 +3,9 @@ import { PageProps } from 'gatsby'
 
 import parser from '@/parser'
 
-const Home: React.FC<PageProps> = ({ pageContext }) => {
-  let components: Array<React.Component> = parser(pageContext)
+const Home: React.FC<PageProps> = (data) => {
+  let pageContext = data.pageContext as any;
+  let components: Array<React.Component> = parser(pageContext.content.components)
 
   return (
     <main>

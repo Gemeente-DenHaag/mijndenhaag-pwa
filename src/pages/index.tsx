@@ -6,7 +6,7 @@ import { ButtonGroup } from '@gemeente-denhaag/nlds-react-components/input/butto
 import { Checkbox } from '@gemeente-denhaag/nlds-react-components/input/checkbox/Checkbox'
 import { FormControlLabel } from '@gemeente-denhaag/nlds-react-components/input/formcontrollabel/FormControlLabel'
 import { FormGroup } from '@gemeente-denhaag/nlds-react-components/input/formgroup/FormGroup'
-import { Typography } from '@gemeente-denhaag/nlds-react-components/datadisplay/Typography/Typography'
+import { Typography } from '@gemeente-denhaag/nlds-react-components/datadisplay/typography/Typography'
 import { Container } from '@gemeente-denhaag/nlds-react-components/layout/container/Container'
 import { Grid } from '@gemeente-denhaag/nlds-react-components/layout/grid/Grid'
 

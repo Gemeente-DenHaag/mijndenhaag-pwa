@@ -3,41 +3,72 @@ import React from 'react'
 import Card from '@gemeente-denhaag/nlds-react-components/surfaces/card/Card'
 import CardHeader from '@gemeente-denhaag/nlds-react-components/surfaces/cardheader/CardHeader'
 import CardContent from '@gemeente-denhaag/nlds-react-components/surfaces/cardcontent/CardContent'
-import Typography from '@gemeente-denhaag/nlds-react-components/datadisplay/Typography/Typography'
+import Typography from '@gemeente-denhaag/nlds-react-components/datadisplay/typography/Typography'
 import CardActions from '@gemeente-denhaag/nlds-react-components/surfaces/cardactions/CardActions'
+import Container from '@gemeente-denhaag/nlds-react-components/layout/container/Container'
+import Button from '@gemeente-denhaag/nlds-react-components/input/button/Button'
+import { PageProps } from 'gatsby'
 
-// Card
-// CardHeader
-// CardContent
-// Typography
-// CardActions
+// Placeholder since this is currently not in the nlds library
+const Icon: React.FC<PageProps> = (data) => {
+    return <p>IconPlaceholder</p>
+}
 
-// Icon?
-// CardMedia?
+// Placeholder since this is currently not in the nlds library
+const CardMedia: React.FC<PageProps> = (data) => {
+  return <p>CardMediaPlaceholder</p>
+}
 
-// interface ComponentData {
-//     type?: string,
-//     attributes?: any,
-//     children?: Array<ComponentData>
-// }
+interface ComponentData {
+    type?: string,
+    attributes?: any,
+    children?: Array<ComponentData | string> 
+}
 
-function parser(params: any): Array<React.Component> {
-  let componentMap: Map<String, React.FC<any>> = new Map([
-    ['CardHeader', CardHeader],
-    ['Card', Card],
-    ['CardContent', CardContent],
-    ['Typography', Typography],
-    ['CardActions', CardActions]
-  ])
+// Object to map strings to React Components
+let componentMap = {
+  Card,
+  CardHeader,
+  CardContent,
+  Typography,
+  CardActions,
+  Container,
+  Icon,
+  CardMedia,
+  Button
+}
 
-  console.log(params)
-  let retVal: Array<React.Component> = []
-  let components: Array<any> = params.content.components
+function parser(components: Array<ComponentData>) {
+  let retVal: any = []
+
   components.forEach((component) => {
-    console.log(component.type)
+    let children = component.children.map(component => {
+      if (typeof component === 'string') {
+        return component;
+      } else {
+        return parseComponent(component)
+      }
+    })
+    retVal.push(React.createElement(componentMap[component.type], component.attributes, children))
   })
-
   return retVal
+}
+
+function parseComponent(component: ComponentData) {
+  let children
+  if (component.children) {
+      children = component.children.map(component => {
+      if (typeof component === 'string') {
+        return component;
+      } else {
+        return parseComponent(component)
+      }
+   })
+  } else {
+    children = [];
+  }
+  
+  return React.createElement(componentMap[component.type], component.attributes, children)
 }
 
 export default parser

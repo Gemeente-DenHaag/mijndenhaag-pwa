@@ -13,7 +13,6 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 }
 
 exports.createPages = async ({ actions, reporter }) => {
-  
   const { createPage } = actions
   try {
     const response = await got('http://localhost:3301/home')
