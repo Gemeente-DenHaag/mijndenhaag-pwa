@@ -21,5 +21,6 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-ts-config`,
+    `gatsby-plugin-material-ui`,
   ],
 }
