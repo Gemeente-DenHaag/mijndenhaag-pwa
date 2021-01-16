@@ -13,17 +13,17 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 }
 
 exports.createPages = async ({ actions, reporter }) => {
+  
   const { createPage } = actions
   try {
     const response = await got('http://localhost:3301/home')
     
     let data = JSON.parse(response.body)
-    let components: Array<React.Component> = parser(data)
 
     createPage({
       path: data.link,
       component: path.resolve(`src/templates/index.tsx`),
-      context: components
+      context: data
     })
   } catch (error) {
     console.log(error)
