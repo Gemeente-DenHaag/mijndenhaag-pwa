@@ -14,17 +14,31 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 
 exports.createPages = async ({ actions, reporter }) => {
   const { createPage } = actions
+
   try {
-    const response = await got('http://localhost:3301/home')
+    // Home page at /home
+    let response = await got('http://localhost:3301/home')
     
     let data = JSON.parse(response.body)
 
     createPage({
       path: data.link,
       component: path.resolve(`src/templates/index.tsx`),
-      context: data
+      context: { components: data.content.components }
+    })
+
+    // Help page at /home/help
+    response = await got('http://localhost:3301/home/help')
+    
+    data = JSON.parse(response.body)
+
+    createPage({
+      path: data.link,
+      component: path.resolve(`src/templates/index.tsx`),
+      context: { components: data.content }
     })
   } catch (error) {
     console.log(error)
   }
+
 }

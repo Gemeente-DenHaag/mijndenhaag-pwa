@@ -4,14 +4,14 @@ import { PageProps } from 'gatsby'
 import parser from '@/parser'
 
 const Home: React.FC<PageProps> = (data) => {
+
   let pageContext = data.pageContext as any
   let components: React.CElement<any, any>[] = parser(
-    pageContext.content.components
+    pageContext.components
   )
 
   return (
     <main>
-      <h1>Hello World</h1>
       {components}
     </main>
   )
