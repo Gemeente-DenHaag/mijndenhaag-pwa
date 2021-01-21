@@ -11,7 +11,7 @@ import { PageProps } from 'gatsby'
 
 // Placeholder since this is currently not in the nlds library
 const Icon: React.FC<PageProps> = (data) => {
-    return <p>IconPlaceholder</p>
+  return <p>IconPlaceholder</p>
 }
 
 // Placeholder since this is currently not in the nlds library
@@ -19,10 +19,11 @@ const CardMedia: React.FC<PageProps> = (data) => {
   return <p>CardMediaPlaceholder</p>
 }
 
+// The structure of the mockdata in the mockserver
 interface ComponentData {
-    type?: string,
-    attributes?: any,
-    children?: Array<ComponentData | string> 
+  type: string
+  attributes: any
+  children?: Array<ComponentData | string>
 }
 
 // Object to map strings to React Components
@@ -38,37 +39,46 @@ let componentMap = {
   Button
 }
 
-function parser(components: Array<ComponentData>) {
-  let retVal: any = []
+function parser(components: ComponentData[]): React.CElement<any, any>[] {
+  let result = []
 
   components.forEach((component) => {
-    let children = component.children.map(component => {
+    let children = component.children.map((component) => {
       if (typeof component === 'string') {
-        return component;
+        return component
       } else {
         return parseComponent(component)
       }
     })
-    retVal.push(React.createElement(componentMap[component.type], component.attributes, children))
+    result.push(
+      React.createElement(
+        componentMap[component.type],
+        component.attributes,
+        children
+      )
+    )
   })
-  return retVal
+  return result
 }
 
 function parseComponent(component: ComponentData) {
-  let children
+  let children = []
+
   if (component.children) {
-      children = component.children.map(component => {
+    children = component.children.map((component) => {
       if (typeof component === 'string') {
-        return component;
+        return component
       } else {
         return parseComponent(component)
       }
-   })
-  } else {
-    children = [];
+    })
   }
-  
-  return React.createElement(componentMap[component.type], component.attributes, children)
+
+  return React.createElement(
+    componentMap[component.type],
+    component.attributes,
+    children
+  )
 }
 
 export default parser
