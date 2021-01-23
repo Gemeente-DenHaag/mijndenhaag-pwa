@@ -70,7 +70,6 @@ import CardActions from '@gemeente-denhaag/nlds-react-components/surfaces/cardac
 import Paper from '@gemeente-denhaag/nlds-react-components/surfaces/paper/Paper'
 import Toolbar from '@gemeente-denhaag/nlds-react-components/surfaces/toolbar/Toolbar'
 
-
 import { PageProps } from 'gatsby'
 
 // Placeholder since this is currently not in the nlds library
@@ -107,19 +106,19 @@ let componentMap = {
 }
 
 function parser(components: ComponentData[]): React.CElement<any, any>[] {
-  let result = components.map((component) => parseComponent(component))
+  let result = components.map((component, i) => parseComponent(component, i))
   return result
 }
 
-function parseComponent(component: ComponentData): React.CElement<any, any> {
+function parseComponent(component: ComponentData, key: number): React.CElement<any, any> {
   let children = []
 
   if (component.children) {
-    children = component.children.map((component) => {
+    children = component.children.map((component, i) => {
       if (typeof component === 'string') {
         return component
       } else {
-        return parseComponent(component)
+        return parseComponent(component, i)
       }
     })
   }
@@ -130,7 +129,7 @@ function parseComponent(component: ComponentData): React.CElement<any, any> {
   } else {
     return React.createElement(
       componentMap[component.type],
-      component.attributes,
+      { key, ...component.attributes },
       children
     );
   }
