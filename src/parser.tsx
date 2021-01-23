@@ -23,7 +23,7 @@ import FormControlLabel from '@gemeente-denhaag/nlds-react-components/input/form
 import FormGroup from '@gemeente-denhaag/nlds-react-components/input/formgroup/FormGroup'
 import IconButton from '@gemeente-denhaag/nlds-react-components/input/iconbutton/IconButton'
 import InputLabel from '@gemeente-denhaag/nlds-react-components/input/inputlabel/InputLabel'
-// import Button from '@gemeente-denhaag/nlds-react-components/input/pickers/Pickers'
+// import Pickers from '@gemeente-denhaag/nlds-react-components/input/pickers/Picker'
 import Radio from '@gemeente-denhaag/nlds-react-components/input/radio/Radio'
 import RadioGroup from '@gemeente-denhaag/nlds-react-components/input/radiogroup/RadioGroup'
 import Select from '@gemeente-denhaag/nlds-react-components/input/select/Select'
@@ -103,32 +103,15 @@ let componentMap = {
   Popper, Step, StepButton, StepIcon, StepLabel, Stepper,
   SwipeableDrawer, Tab, TabContext, TabList, TabScrollButton,
   CardActions, Accordion, AccordionDetails, AccordionSummary,
-  AppBar, Paper, Toolbar, Icon, CardMedia, Button,
+  AppBar, Paper, Toolbar, Icon, CardMedia, Button, MenuList
 }
 
 function parser(components: ComponentData[]): React.CElement<any, any>[] {
-  let result = []
-
-  components.forEach((component) => {
-    let children = component.children.map((component) => {
-      if (typeof component === 'string') {
-        return component
-      } else {
-        return parseComponent(component)
-      }
-    })
-    result.push(
-      React.createElement(
-        componentMap[component.type],
-        component.attributes,
-        children
-      )
-    )
-  })
+  let result = components.map((component) => parseComponent(component))
   return result
 }
 
-function parseComponent(component: ComponentData) {
+function parseComponent(component: ComponentData): React.CElement<any, any> {
   let children = []
 
   if (component.children) {
@@ -141,11 +124,16 @@ function parseComponent(component: ComponentData) {
     })
   }
 
-  return React.createElement(
-    componentMap[component.type],
-    component.attributes,
-    children
-  )
+  if (!componentMap.hasOwnProperty(component.type)) {
+    console.log(`${component.type} is not available in the componentMap`)
+    return <p>Placeholder for missing component</p>
+  } else {
+    return React.createElement(
+      componentMap[component.type],
+      component.attributes,
+      children
+    );
+  }
 }
 
 export default parser
