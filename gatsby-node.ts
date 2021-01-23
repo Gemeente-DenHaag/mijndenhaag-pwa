@@ -2,7 +2,6 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 import path from 'path'
 import got from 'got'
-import parser from './src/parser'
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
