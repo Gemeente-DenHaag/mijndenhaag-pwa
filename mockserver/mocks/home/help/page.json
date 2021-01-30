@@ -17,14 +17,14 @@
             "type": "Typography",
             "attributes": {
                 "align": "left",
-                "variant": "subtitle"
+                "variant": "subtitle1"
             },
             "children": ["Hier vind U informatie over de opbouw van de website, waar U wat kunt vinden en hoe U de website navigeert."]
         },
         {
             "type": "Container",
             "attributes": {
-                "fixed": "true"
+                "fixed": true
             },
             "children": [{
                     "type": "Typography",
