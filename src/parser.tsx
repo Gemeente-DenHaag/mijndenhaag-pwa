@@ -90,7 +90,7 @@ interface ComponentData {
 }
 
 // Object to map strings to React Components
-let componentMap = {
+const componentMap = {
   Card, Avatar, AvatarGroup, Badge, Divider, List,
   CardHeader, ListItem, ListItemAvatar, ListItemIcon,
   ListItemSecondaryAction, ListItemText, ListSubHeader,
