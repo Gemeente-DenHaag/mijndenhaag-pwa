@@ -105,9 +105,8 @@ const componentMap = {
   AppBar, Paper, Toolbar, Icon, CardMedia, Button, MenuList
 }
 
-function parser(components: ComponentData[]): React.CElement<any, any>[] {
-  let result = components.map((component, i) => parseComponent(component, i))
-  return result
+const parser = (components: ComponentData[]): React.CElement<any, any>[] => {
+  return components.map((component, i) => parseComponent(component, i))
 }
 
 function parseComponent(component: ComponentData, key: number): React.CElement<any, any> {
