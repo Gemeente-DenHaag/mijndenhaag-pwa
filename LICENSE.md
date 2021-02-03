@@ -1,4 +1,4 @@
-Copyright (C) 2021 Municipality of The Hague (https://denhaag.nl)
+Copyright (C) 2021 Gemeente Den Haag (https://denhaag.nl)
 mijndenHaag-pwa
 
 This software is licensed under the European Public License (EUPL)
