@@ -14,7 +14,7 @@ import Stepper from '@gemeente-denhaag/nlds-react-components/navigation/stepper/
 import Step from '@gemeente-denhaag/nlds-react-components/navigation/step/Step'
 import StepLabel from '@gemeente-denhaag/nlds-react-components/navigation/steplabel/StepLabel'
 import StepContent from '@gemeente-denhaag/nlds-react-components/navigation/stepcontent/StepContent'
-import Header from '@/components/header'
+import Header from '@/components/Header'
 
 const Home: React.FC<PageProps> = () => (
   <main>

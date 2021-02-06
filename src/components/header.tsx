@@ -8,7 +8,7 @@ import Grid from '@gemeente-denhaag/nlds-react-components/layout/grid/Grid'
 import FormControl from '@gemeente-denhaag/nlds-react-components/input/formcontrol/FormControl'
 import Select from '@gemeente-denhaag/nlds-react-components/input/select/Select'
 import Divider from '@gemeente-denhaag/nlds-react-components/datadisplay/divider/Divider'
-import TextField from '@gemeente-denhaag/nlds-react-components/input/textField/TextField'
+import TextField from '@gemeente-denhaag/nlds-react-components/input/textfield/TextField'
 
 const Header: React.FC = () => (
   <AppBar position='static' color='transparent'>
