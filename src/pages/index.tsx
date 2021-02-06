@@ -16,13 +16,16 @@ import StepLabel from '@gemeente-denhaag/nlds-react-components/navigation/stepla
 import StepContent from '@gemeente-denhaag/nlds-react-components/navigation/stepcontent/StepContent'
 import Header from '@/components/Header'
 import AppBar from '@gemeente-denhaag/nlds-react-components/surfaces/appbar/AppBar'
+import TopNavigation from '@/components/TopNavigation'
 
 const Home: React.FC<PageProps> = () => (
   <main>
     <Container maxWidth='lg'>
       <AppBar position='static' color='transparent'>
         <Header />
+        <TopNavigation />
       </AppBar>
+
       <Grid container direction={'column'} justify='space-between' spacing={8}>
         <Grid item>
           <Typography align='inherit' variant='h5'>
