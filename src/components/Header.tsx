@@ -1,5 +1,4 @@
 import React from 'react'
-import { AppBar } from '@gemeente-denhaag/nlds-react-components/surfaces/appbar/AppBar'
 import { Button } from '@gemeente-denhaag/nlds-react-components/input/button/Button'
 
 // @ts-ignore   This is not a regular component, which ts doesn't like
@@ -73,21 +72,19 @@ const RightNav: React.FC = () => (
 )
 
 const Header: React.FC = () => (
-  <AppBar position='static' color='transparent'>
-    <Grid container justify='space-between'>
-      <Grid item xs>
-        <LeftNav />
-        <Divider variant='fullWidth' />
-      </Grid>
-      <Grid item xs={2}>
-        <Logo />
-      </Grid>
-      <Grid item xs>
-        <RightNav />
-        <Divider variant='fullWidth' />
-      </Grid>
+  <Grid container justify='space-between'>
+    <Grid item xs>
+      <LeftNav />
+      <Divider variant='fullWidth' />
     </Grid>
-  </AppBar>
+    <Grid item xs={2}>
+      <Logo />
+    </Grid>
+    <Grid item xs>
+      <RightNav />
+      <Divider variant='fullWidth' />
+    </Grid>
+  </Grid>
 )
 
 export default Header

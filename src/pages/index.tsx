@@ -15,11 +15,14 @@ import Step from '@gemeente-denhaag/nlds-react-components/navigation/step/Step'
 import StepLabel from '@gemeente-denhaag/nlds-react-components/navigation/steplabel/StepLabel'
 import StepContent from '@gemeente-denhaag/nlds-react-components/navigation/stepcontent/StepContent'
 import Header from '@/components/Header'
+import AppBar from '@gemeente-denhaag/nlds-react-components/surfaces/appbar/AppBar'
 
 const Home: React.FC<PageProps> = () => (
   <main>
     <Container maxWidth='lg'>
-      <Header />
+      <AppBar position='static' color='transparent'>
+        <Header />
+      </AppBar>
       <Grid container direction={'column'} justify='space-between' spacing={8}>
         <Grid item>
           <Typography align='inherit' variant='h5'>
