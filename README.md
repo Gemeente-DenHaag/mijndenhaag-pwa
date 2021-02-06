@@ -17,6 +17,16 @@
 
 To view the project you can open `http://localhost:8000`.
 
+
+## Environment variables
+This project currently relies on the mockserver (see `/mockserver/README.md`).
+In order to run the project you need to add two .env files to the root directory:
+* .env.development
+* .env.production
+
+Both containing the address of the mockserver instance:
+`MOCK_CONTENT_API_URL=<address>`
+
 ## 🤝 Contributing
 
 1. Fork this repository;

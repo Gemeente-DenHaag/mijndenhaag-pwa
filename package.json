@@ -21,6 +21,7 @@
     "gatsby-plugin-offline": "^3.8.0",
     "gatsby-plugin-typescript": "^2.10.0",
     "gatsby-plugin-typescript-checker": "^1.1.1",
+    "got": "^11.8.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "tsconfig-paths-webpack-plugin": "3.3.0"
