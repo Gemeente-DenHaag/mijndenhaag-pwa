@@ -4,6 +4,7 @@ import React, {useState} from "react";
 import Grid from "@gemeente-denhaag/nlds-react-components/layout/grid/Grid";
 import {Typography} from "@gemeente-denhaag/nlds-react-components/datadisplay/typography/Typography";
 import {Container} from "@gemeente-denhaag/nlds-react-components/layout/Container/Container";
+import { navigate } from "gatsby";
 
 const LoginSection: React.FC = () => {
 
@@ -12,10 +13,12 @@ const LoginSection: React.FC = () => {
 
     const submitBsn = () => {
         //TODO: Submit BSN to API gateway to receive a JWT
+        navigate("/index");
     };
 
     const submitKvk = () => {
         //TODO: Submit Kvk to API gateway to receive a JWT
+        navigate("/index");
     };
 
     return (
