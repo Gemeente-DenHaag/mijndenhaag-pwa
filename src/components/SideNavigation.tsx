@@ -10,13 +10,13 @@ import Icon, { HambugerIcon, ArchiveIcon, MapIcon, InboxIcon, FileTextIcon } fro
 interface NavigationItem {
   icon: React.FC;
   name: string;
-  color?: string;
+  stroke?: string;
 }
 
 const buildNavigation = (navigationItems: NavigationItem[]): React.ReactElement[] => {
   return navigationItems.map<React.ReactElement>(item =>
   (<ListItem>
-    <ListItemIcon><Icon icon={item.icon} color={item.color} /></ListItemIcon>
+    <ListItemIcon><Icon icon={item.icon} stroke={item.stroke} /></ListItemIcon>
     <ListItemText>{item.name}</ListItemText>
   </ListItem>)
   );
@@ -25,11 +25,11 @@ const buildNavigation = (navigationItems: NavigationItem[]): React.ReactElement[
 const SideNavigation: React.FC = () => (
   <List>
     {buildNavigation([
-      { "name": "Overzicht", "icon": HambugerIcon },
-      { "name": "Lopende zaken", "icon": ArchiveIcon, "color": "white" },
-      { "name": "Mijn producten", "icon": FileTextIcon, "color": "white" },
-      { "name": "Mijn wijk", "icon": MapIcon, "color": "white" },
-      { "name": "Meldingen", "icon": InboxIcon, "color": "white" }
+      { "name": "Overzicht", "icon": HambugerIcon, "stroke": "black" },
+      { "name": "Lopende zaken", "icon": ArchiveIcon, "stroke": "black" },
+      { "name": "Mijn producten", "icon": FileTextIcon, "stroke": "black" },
+      { "name": "Mijn wijk", "icon": MapIcon, "stroke": "black" },
+      { "name": "Meldingen", "icon": InboxIcon, "stroke": "black" }
     ])}
   </List>
 );
