@@ -1,8 +1,8 @@
 import React from 'react';
 
 import List from '@gemeente-denhaag/nlds-react-components/datadisplay/list/List';
-import ListItem from '@gemeente-denhaag/nlds-react-components/datadisplay/ListItem/ListItem';
-import ListItemText from '@gemeente-denhaag/nlds-react-components/datadisplay/ListItemText/ListItemText';
+import ListItem from '@gemeente-denhaag/nlds-react-components/datadisplay/listitem/ListItem';
+import ListItemText from '@gemeente-denhaag/nlds-react-components/datadisplay/listitemtext/ListItemText';
 
 interface NavigationItem {
   icon: string;
@@ -10,16 +10,11 @@ interface NavigationItem {
 }
 
 const buildNavigation = (navigationItems: NavigationItem[]): React.ReactElement[] => {
-  const listItems = navigationItems.map<React.ReactElement>(item => {
-    return (
-      <ListItem>
-        <ListItemText>{item.name}</ListItemText>
-      </ListItem>
-    );
-  }
+  return navigationItems.map<React.ReactElement>(item =>
+  (<ListItem>
+    <ListItemText>{item.name}</ListItemText>
+  </ListItem>)
   );
-
-  return listItems;
 }
 
 const SideNavigation: React.FC = () => (
