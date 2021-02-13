@@ -1,8 +1,4 @@
-<p align="center">
-  <img src="https://www.joaopedro.cc/img/github/typescript-gatsby-starter.png" alt="Gatsby and TypeScript">
-</p>
-
-<br>
+# MijnDenHaag Progressive Web App
 
 ## 🚀 Getting started
 
@@ -35,3 +31,8 @@ Both containing the address of the mockserver instance:
 4. Push to the branch: `git push origin my-new-feature`.
 
 **After your pull request is merged**, you can safely delete your branch.
+
+## ❗ Reporting issues
+Our public issue tracker is located [here](https://github.com/Gemeente-DenHaag/mijndenhaag-pwa/issues).
+Before reporting an issue make sure to check if a similar issue already exists.
+When reporting an issue give detailed information about the issue and how to reproduce it if applicable.
