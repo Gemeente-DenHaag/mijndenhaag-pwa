@@ -29,11 +29,11 @@ const buildNavigation = (navigationItems: NavigationItem[]): React.ReactElement[
 const SideNavigation: React.FC = () => (
   <List>
     {buildNavigation([
-      { "name": "Overzicht", "icon": HambugerIcon, "to": "#", "color": "#4B4B4B" },
-      { "name": "Lopende zaken", "icon": ArchiveIcon, "to": "#", "color": "#4B4B4B" },
-      { "name": "Mijn producten", "icon": FileTextIcon, "to": "#", "color": "#4B4B4B" },
-      { "name": "Mijn wijk", "icon": MapIcon, "to": "#", "color": "#4B4B4B" },
-      { "name": "Meldingen", "icon": InboxIcon, "to": "#", "color": "#4B4B4B" }
+      { "name": "Overzicht", "icon": HambugerIcon, "to": "#" },
+      { "name": "Lopende zaken", "icon": ArchiveIcon, "to": "#" },
+      { "name": "Mijn producten", "icon": FileTextIcon, "to": "#" },
+      { "name": "Mijn wijk", "icon": MapIcon, "to": "#" },
+      { "name": "Meldingen", "icon": InboxIcon, "to": "/", "color": "#1261A3" }
     ])}
   </List>
 );
