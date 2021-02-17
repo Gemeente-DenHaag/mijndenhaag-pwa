@@ -25,7 +25,6 @@ const Home: React.FC<PageProps> = () => (
         <Header />
         <TopNavigation />
       </AppBar>
-
       <Grid container direction={'column'} justify='space-between' spacing={8}>
         <Grid item>
           <Typography align='inherit' variant='h5'>
