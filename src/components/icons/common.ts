@@ -1,5 +1,5 @@
 /**
- * Base props for all icons. Icons must implement this interface.
+ * Base props for Icon components. All Icons must implement this interface.
  */
 interface IIconProps {
   size?: number;

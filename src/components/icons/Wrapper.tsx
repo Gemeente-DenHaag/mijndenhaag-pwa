@@ -14,8 +14,8 @@ export const Icon: React.FC<IIconWrapperProps> = (props) => {
   svgExtraProps.color = color ? color : 'currentColor';
   svgExtraProps.style = styleArg;
 
-  const IconComp: React.FC = icon
+  const IconComp: React.FC = icon;
   return (
     <IconComp {...svgProps} {...svgExtraProps} />
-  )
+  );
 }
