@@ -36,6 +36,7 @@ const LanguageButton: React.FC = () => (
   <FormControl>
     <Select labelId='default-select-label' native>
       <option value={'NL'}>NL</option>
+      <option value={'EN'}>EN</option>
       <option value={'BE'}>BE</option>
       <option value={'DE'}>DE</option>
     </Select>
