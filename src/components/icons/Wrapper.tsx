@@ -11,8 +11,6 @@ export const Icon: React.FC<IIconWrapperProps> = (props) => {
 
   svgExtraProps.width = size ? `${size}px` : '20px';
   svgExtraProps.height = size ? `${size}px` : '20px';
-
-  // svgExtraProps.style = stroke ? { stroke, ...styleArg } : undefined;
   svgExtraProps.color = color;
 
   const IconComp: React.FC = icon
