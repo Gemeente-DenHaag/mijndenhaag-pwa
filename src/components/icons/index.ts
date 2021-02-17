@@ -7,6 +7,7 @@ export * from "./IconArrowRight";
 export * from "./IconBell";
 export * from "./IconCheck";
 export * from "./IconClock"
+export * from "./IconCoffee";
 export * from "./IconFileText";
 export * from "./IconHamburger";
 export * from "./IconHash";
