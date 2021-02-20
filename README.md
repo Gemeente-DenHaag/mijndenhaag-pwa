@@ -1,7 +1,8 @@
 # MijnDenHaag Progressive Web App
 
 ## 🥅 Goals of this codebase
-The MijnGemeente portal is the portal where citizens and entrepreneurs can get 24/7 insight to their personal data inside the services and products from the municipality. The citizens and enterpreneurs will only see the services and products which are relevant to them. The portal will also provide suggestions for other relevant products and services. The MijnGemeente portal provides citizens and entrepreneurs insight and control over their data via one central digital portal for the entire municipality. Because the portal is 100% personal, we can provide the citizen and entrepreneur with suggestions which are relevant to their situation.
+The MijnGemeente portal is the portal where citizens and entrepreneurs can get 24/7 insight to their personal data, their services and products from the municipality. The citizens and enterpreneurs will only see the services and products which are relevant to them.
+The MijnGemeente portal will also provide suggestions for other relevant products and services. The MijnGemeente portal provides citizens and entrepreneurs insight and control over their data via one central digital portal for the entire municipality. Because the portal is 100% personal, we can provide the citizen and entrepreneur with suggestions which are relevant to their situation.
 
 ## 🚀 Getting started
 
