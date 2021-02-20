@@ -8,6 +8,8 @@ import FormControl from '@gemeente-denhaag/nlds-react-components/input/formcontr
 import Select from '@gemeente-denhaag/nlds-react-components/input/select/Select'
 import Divider from '@gemeente-denhaag/nlds-react-components/datadisplay/divider/Divider'
 import TextField from '@gemeente-denhaag/nlds-react-components/input/textfield/TextField'
+import MenuItem from '@gemeente-denhaag/nlds-react-components/navigation/menuitem/MenuItem'
+import AccessibilityNewIcon from '@material-ui/icons/AccessibilityNew'
 
 const Logo: React.FC = () => (
   <Grid container justify='center'>
@@ -31,31 +33,43 @@ const LeftNav: React.FC = () => (
   </Grid>
 )
 
-// Currently this Component is using native select options due to issue #19 (in the component lib)
-const LanguageButton: React.FC = () => (
+interface LanguageButtonProps {
+  language: string
+  handleChange: (
+    event: React.ChangeEvent<{ name?: string; value: string }>,
+    child: React.ReactNode
+  ) => void
+}
+
+const LanguageButton: React.FC<LanguageButtonProps> = ({
+  language,
+  handleChange
+}) => (
   <FormControl>
-    <Select labelId='default-select-label' native>
-      <option value={'NL'}>NL</option>
-      <option value={'EN'}>EN</option>
-      <option value={'BE'}>BE</option>
-      <option value={'DE'}>DE</option>
+    <Select
+      labelId='default-select-label'
+      value={language}
+      onChange={handleChange}
+    >
+      {/* @ts-ignore   The value property is missing until issue #19 is merged */}
+      <MenuItem value={'NL'}>NL</MenuItem>
+      {/* @ts-ignore */}
+      <MenuItem value={'EN'}>EN</MenuItem>
     </Select>
   </FormControl>
 )
 
-// Currently this Component is using native select options due to issue #19 and #21 (in the component lib)
 const AccesibilityButton: React.FC = () => (
-  <FormControl>
-    <Select labelId='default-select-label' native>
-      {/* Should be replaced with MenuItems with ListItemIcons */}
-      <option>A</option>
-      <option>A</option>
-      <option>A</option>
-    </Select>
-  </FormControl>
+  <Button>
+    <AccessibilityNewIcon />
+  </Button>
 )
 
-const RightNav: React.FC = () => (
+interface RightNav {
+  languageButtonProps: LanguageButtonProps
+}
+
+const RightNav: React.FC<RightNav> = ({ languageButtonProps }) => (
   <Grid container alignItems='center' justify='flex-end' spacing={1}>
     <Grid item>
       <TextField label='Zoeken'>Text</TextField>
@@ -67,25 +81,36 @@ const RightNav: React.FC = () => (
       <AccesibilityButton />
     </Grid>
     <Grid item>
-      <LanguageButton />
+      <LanguageButton {...languageButtonProps} />
     </Grid>
   </Grid>
 )
 
-const Header: React.FC = () => (
-  <Grid container justify='space-between'>
-    <Grid item xs>
-      <LeftNav />
-      <Divider variant='fullWidth' />
+const Header: React.FC = () => {
+  const [language, setLanguage] = React.useState('NL')
+  const handleLanguageChange = (
+    event: React.ChangeEvent<{ value: unknown }>
+  ) => {
+    setLanguage(event.target.value as string)
+  }
+
+  return (
+    <Grid container justify='space-between'>
+      <Grid item xs>
+        <LeftNav />
+        <Divider variant='fullWidth' />
+      </Grid>
+      <Grid item xs={2}>
+        <Logo />
+      </Grid>
+      <Grid item xs>
+        <RightNav
+          languageButtonProps={{ language, handleChange: handleLanguageChange }}
+        />
+        <Divider variant='fullWidth' />
+      </Grid>
     </Grid>
-    <Grid item xs={2}>
-      <Logo />
-    </Grid>
-    <Grid item xs>
-      <RightNav />
-      <Divider variant='fullWidth' />
-    </Grid>
-  </Grid>
-)
+  )
+}
 
 export default Header
