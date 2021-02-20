@@ -6,7 +6,7 @@ We pledge to act and interact in ways that contribute to an open, welcoming, div
 
 ## TL;DR
 
-When you make a PR you will need to sign our [Contributor License Agreement](CLA.md), so first check with your employer if you need to.
+When you make a PR you will need to sign our [Contributor License Agreement](CLA.md). Make sure to check with your employer if you have permission to sign before contributing.
 
 ## Foundation for Public Code
 
