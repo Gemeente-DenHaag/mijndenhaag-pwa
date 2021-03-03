@@ -12,7 +12,7 @@
     "type-check": "tsc"
   },
   "dependencies": {
-    "@gemeente-denhaag/denhaag-component-library": "^0.1.8",
+    "@gemeente-denhaag/denhaag-component-library": "^0.1.9",
     "acorn": "^8.0.4",
     "acorn-jsx": "^5.3.1",
     "gatsby": "2.29.1",
