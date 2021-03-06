@@ -9,7 +9,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "generate:specs": "npx openapi-typescript https://raw.githubusercontent.com/VNG-Realisatie/zaken-api/master/src/openapi.yaml --output src/types/schema.ts"
   },
   "dependencies": {
     "@gemeente-denhaag/nlds-react-components": "0.1.3",
