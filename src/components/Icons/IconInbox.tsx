@@ -1,13 +1,18 @@
 import React from 'react'
 import IIconProps from '@/components/Icons/common'
 
-export const InboxIcon: React.FC<IIconProps> = ({ color, ...props }) => (
+export const InboxIcon: React.FC<IIconProps> = ({
+  color,
+  ariaLabel,
+  ...props
+}) => (
   <svg
     data-testid={`InboxIcon`}
     fill='none'
     stroke={color}
     viewBox='0 0 20 20'
     xmlns='http://www.w3.org/2000/svg'
+    aria-label={ariaLabel}
     {...props}
   >
     <path

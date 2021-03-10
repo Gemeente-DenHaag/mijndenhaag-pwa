@@ -1,12 +1,15 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import List from '@gemeente-denhaag/list/List'
 import ListItemText from '@gemeente-denhaag/listitemtext/ListItemText'
 
-//TODO replace this import with our own when https://github.com/Gemeente-DenHaag/denhaag-component-library/issues/101 is fixed.
+//TODO replace this import with our own when
+// https://github.com/Gemeente-DenHaag/denhaag-component-library/issues/101  and
+// https://github.com/Gemeente-DenHaag/denhaag-component-library/issues/102 are fixed.
 import ListItem from '@material-ui/core/ListItem'
+import List from '@material-ui/core/List'
 // import ListItem from '@gemeente-denhaag/listitem/ListItem'
+// import List from '@gemeente-denhaag/list/List'
 
 import Icon, {
   HambugerIcon,
@@ -54,15 +57,20 @@ const buildNavigation = (
       style={linkStyles}
       activeStyle={activeStyles}
       partiallyActive={true}
+      aria-label={`navigation to ${item.name}`}
     >
-      <Icon icon={item.icon} style={{ marginRight: '17px' }} />
+      <Icon
+        icon={item.icon}
+        style={{ marginRight: '17px' }}
+        ariaLabel={`${item.name} icon`}
+      />
       <ListItemText>{item.name}</ListItemText>
     </ListItem>
   ))
 }
 
 const SideNavigation: React.FC = () => (
-  <List>
+  <List aria-label='Side Navigation' component='nav'>
     {buildNavigation([
       { name: 'Overzicht', icon: HambugerIcon, to: '/' },
       { name: 'Lopende zaken', icon: ArchiveIcon, to: '#' },

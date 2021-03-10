@@ -3,6 +3,7 @@ import IIconProps from '@/components/Icons/common'
 
 export const AccessibilityIcon: React.FC<IIconProps> = ({
   color,
+  ariaLabel,
   ...props
 }) => (
   <svg
@@ -11,6 +12,7 @@ export const AccessibilityIcon: React.FC<IIconProps> = ({
     stroke='none'
     viewBox='0 0 16 18'
     xmlns='http://www.w3.org/2000/svg'
+    aria-label={ariaLabel}
     {...props}
   >
     <path

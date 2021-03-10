@@ -1,13 +1,18 @@
 import React from 'react'
 import IIconProps from '@/components/Icons/common'
 
-export const HambugerIcon: React.FC<IIconProps> = ({ color, ...props }) => (
+export const HambugerIcon: React.FC<IIconProps> = ({
+  color,
+  ariaLabel,
+  ...props
+}) => (
   <svg
     data-testid={`HamburgerIcon`}
     fill={color}
     stroke='none'
     viewBox='0 0 20 20'
     xmlns='http://www.w3.org/2000/svg'
+    aria-label={ariaLabel}
     {...props}
   >
     <path
