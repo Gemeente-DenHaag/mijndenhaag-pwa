@@ -11,8 +11,8 @@ const LoginForm: React.FC = () => {
   const submitBsn = (formSubmitEvent: FormEvent) => {
     formSubmitEvent.preventDefault()
 
-    const bsn = formSubmitEvent.target['bsn'].value
-    //BSN should be sent to Gateway to receive JWT for mock login.
+    // const bsn = formSubmitEvent.target['bsn'].value
+    // BSN should be sent to Gateway to receive JWT for mock login.
 
     navigate('/index')
   }
@@ -20,8 +20,8 @@ const LoginForm: React.FC = () => {
   const submitKvk = (formSubmitEvent) => {
     formSubmitEvent.preventDefault()
 
-    const kvk = formSubmitEvent.target['kvk'].value
-    //KVK should be sent to Gateway to receive JWT for mock login.
+    // const kvk = formSubmitEvent.target['kvk'].value
+    // KVK should be sent to Gateway to receive JWT for mock login.
 
     navigate('/index')
   }
