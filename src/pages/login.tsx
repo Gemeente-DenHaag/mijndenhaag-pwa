@@ -1,11 +1,11 @@
 import React from 'react'
-import {PageProps} from 'gatsby'
-import LoginForm from "@/components/LoginForm";
+import { PageProps } from 'gatsby'
+import LoginForm from '@/components/LoginForm'
 
 const Login: React.FC<PageProps> = () => (
-    <main>
-        <LoginForm />
-    </main>
+  <main>
+    <LoginForm />
+  </main>
 )
 
 export default Login
