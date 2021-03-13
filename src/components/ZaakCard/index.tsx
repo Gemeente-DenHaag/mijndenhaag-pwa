@@ -1,26 +1,35 @@
 import React from 'react'
-import { Zaak, Status } from '@/types'
 import Card from '@gemeente-denhaag/card/Card'
 import CardContent from '@gemeente-denhaag/cardcontent/CardContent'
-import CardActions from '@gemeente-denhaag/cardactions/CardActions'
 import Typography from '@gemeente-denhaag/typography/Typography'
 import Button from '@gemeente-denhaag/button/Button'
+import Stepper from '@gemeente-denhaag/stepper/Stepper'
+import Step from '@gemeente-denhaag/step/Step'
+import StepLabel from '@gemeente-denhaag/steplabel/StepLabel'
 
-interface ZaakCardData {
-  zaak: Zaak
+import { Link } from 'gatsby'
+/**
+ * Format a timestamp string to a human readable format. If the locale is not found or `undefined` it will use the
+ * default browser locale.
+ *
+ * **Note**: don't use this function for batch formatting, use `Intl.DateTimeFormat` instead.
+ * @param dateStr IETF-compliant RFC 2822 timestamps or ISO 8601 format (ISO format can only be UTC)
+ * @param locale IETF BCP 47 language tag
+ * @returns human readable date
+ */
+const formatDate = (dateStr: string, locale?: string): string => {
+  return new Date(dateStr).toLocaleDateString(locale, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  })
 }
 
-interface ZaakCardProps {
-  title: string
-  subtitle?: string
-  date: string
-  children?: React.ReactNode
-}
-
-const ZaakCard: React.FC<ZaakCardProps> = ({
+const ZaakCardWrapper: React.FC<ZaakCardProps> = ({
   title,
-  subtitle,
   date,
+  locale,
+  subtitle,
   children
 }) => (
   <Card>
@@ -32,20 +41,40 @@ const ZaakCard: React.FC<ZaakCardProps> = ({
         </Typography>
       )}
       {children}
-      <Typography variant='body1'>{date}</Typography>
+      <Typography variant='body1'>{formatDate(date, locale)}</Typography>
+      <Button>view more</Button>
     </CardContent>
-    <CardActions>
-      <Button>→</Button>
-    </CardActions>
   </Card>
 )
 
-const ZaakStatus: React.FC = () => <div></div>
+const ZaakStatus: React.FC<ZaakStatussenProps> = ({
+  statussen,
+  currentStatus
+}) => {
+  statussen.sort((a, b) => a.index - b.index)
 
-const LopendeZaakCard: React.FC<ZaakCardData> = ({ zaak }) => (
-  <ZaakCard title={zaak.omschrijving} date={zaak.startdatum}>
-    <ZaakStatus></ZaakStatus>
-  </ZaakCard>
+  return (
+    <Stepper activeStep={currentStatus}>
+      {statussen.map((status) => (
+        <Step key={status.index}>
+          <StepLabel>
+            {status.index !== currentStatus && status.description}
+          </StepLabel>
+        </Step>
+      ))}
+    </Stepper>
+  )
+}
+
+export const ZaakCard: React.FC<ZaakCardData> = ({ zaak, zaakStatussen }) => (
+  <ZaakCardWrapper title={zaak.title} date={zaak.date} locale={zaak.locale}>
+    {zaakStatussen && (
+      <ZaakStatus
+        statussen={zaakStatussen.statussen}
+        currentStatus={zaakStatussen.currentStatus}
+      ></ZaakStatus>
+    )}
+  </ZaakCardWrapper>
 )
 
-export default LopendeZaakCard
+export default ZaakCard
