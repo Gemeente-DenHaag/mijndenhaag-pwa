@@ -10,8 +10,6 @@ import React, { FormEvent } from 'react'
 const LoginForm: React.FC = () => {
   const submitBsn = (formSubmitEvent: FormEvent) => {
     formSubmitEvent.preventDefault()
-
-    // const bsn = formSubmitEvent.target['bsn'].value
     // TODO: BSN should be sent to Gateway to receive JWT for mock login.
 
     navigate('/index')
@@ -19,8 +17,6 @@ const LoginForm: React.FC = () => {
 
   const submitKvk = (formSubmitEvent) => {
     formSubmitEvent.preventDefault()
-
-    // const kvk = formSubmitEvent.target['kvk'].value
     // TODO: KVK should be sent to Gateway to receive JWT for mock login.
 
     navigate('/index')
