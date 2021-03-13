@@ -7,7 +7,7 @@ import Stepper from '@gemeente-denhaag/stepper/Stepper'
 import Step from '@gemeente-denhaag/step/Step'
 import StepLabel from '@gemeente-denhaag/steplabel/StepLabel'
 
-import { Link } from 'gatsby'
+import { ZaakCardProps, ZaakCardWrapperProps, ZaakStatusesProps } from './types'
 /**
  * Format a timestamp string to a human readable format. If the locale is not found or `undefined` it will use the
  * default browser locale.
@@ -25,7 +25,7 @@ const formatDate = (dateStr: string, locale?: string): string => {
   })
 }
 
-const ZaakCardWrapper: React.FC<ZaakCardProps> = ({
+const ZaakCardWrapper: React.FC<ZaakCardWrapperProps> = ({
   title,
   date,
   locale,
@@ -42,20 +42,20 @@ const ZaakCardWrapper: React.FC<ZaakCardProps> = ({
       )}
       {children}
       <Typography variant='body1'>{formatDate(date, locale)}</Typography>
-      <Button>view more</Button>
+      <Button>-></Button>
     </CardContent>
   </Card>
 )
 
-const ZaakStatus: React.FC<ZaakStatussenProps> = ({
-  statussen,
+const ZaakStatus: React.FC<ZaakStatusesProps> = ({
+  statuses,
   currentStatus
 }) => {
-  statussen.sort((a, b) => a.index - b.index)
+  statuses.sort((a, b) => a.index - b.index)
 
   return (
     <Stepper activeStep={currentStatus}>
-      {statussen.map((status) => (
+      {statuses.map((status: { index: React.Key; description: any }) => (
         <Step key={status.index}>
           <StepLabel>
             {status.index !== currentStatus && status.description}
@@ -66,11 +66,11 @@ const ZaakStatus: React.FC<ZaakStatussenProps> = ({
   )
 }
 
-export const ZaakCard: React.FC<ZaakCardData> = ({ zaak, zaakStatussen }) => (
+export const ZaakCard: React.FC<ZaakCardProps> = ({ zaak, zaakStatussen }) => (
   <ZaakCardWrapper title={zaak.title} date={zaak.date} locale={zaak.locale}>
     {zaakStatussen && (
       <ZaakStatus
-        statussen={zaakStatussen.statussen}
+        statuses={zaakStatussen.statuses}
         currentStatus={zaakStatussen.currentStatus}
       ></ZaakStatus>
     )}
@@ -78,3 +78,4 @@ export const ZaakCard: React.FC<ZaakCardData> = ({ zaak, zaakStatussen }) => (
 )
 
 export default ZaakCard
+export * from './types'

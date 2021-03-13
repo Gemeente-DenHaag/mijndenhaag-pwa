@@ -1,18 +1,18 @@
-interface ZaakCardData {
+export interface ZaakCardProps {
   /**
    * zaak to display
    */
-  zaak: ZaakCardProps
+  zaak: ZaakCardWrapperProps
   /**
    * all possible statussen of the zaak and its current status
    */
-  zaakStatussen?: ZaakStatussenProps
+  zaakStatussen?: ZaakStatusesProps
 }
 
 /**
  *
  */
-interface ZaakCardProps {
+export interface ZaakCardWrapperProps {
   /**
    * title of the card
    */
@@ -35,7 +35,7 @@ interface ZaakCardProps {
   children?: React.ReactNode
 }
 
-interface ZaakStatus {
+export interface ZaakStatusProps {
   /**
    * description of the zaak status
    */
@@ -46,11 +46,11 @@ interface ZaakStatus {
   index: number
 }
 
-interface ZaakStatussenProps {
+export interface ZaakStatusesProps {
   /**
-   * list of statussen
+   * list of statuses
    */
-  statussen: ZaakStatus[]
+  statuses: ZaakStatusProps[]
   /**
    * index of the current status
    */
