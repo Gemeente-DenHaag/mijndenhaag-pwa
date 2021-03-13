@@ -14,13 +14,16 @@ import Stepper from '@gemeente-denhaag/stepper/Stepper'
 import Step from '@gemeente-denhaag/step/Step'
 import StepLabel from '@gemeente-denhaag/steplabel/StepLabel'
 import StepContent from '@gemeente-denhaag/stepcontent/StepContent'
+import AppBar from '@gemeente-denhaag/appbar/AppBar'
 
-import SideNavigation from '@/components/SideNav'
+import Header from '@/components/Header'
 
 const Home: React.FC<PageProps> = () => (
   <main>
-    <Container maxWidth='md'>
-      <SideNavigation />
+    <Container maxWidth='lg'>
+      <AppBar position='static' color='transparent'>
+        <Header />
+      </AppBar>
       <Grid container direction={'column'} justify='space-between' spacing={8}>
         <Grid item>
           <Typography align='inherit' variant='h5'>

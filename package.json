@@ -12,6 +12,7 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@material-ui/icons": "^4.11.2",
     "@gemeente-denhaag/denhaag-component-library": "^0.1.9",
     "acorn": "^8.0.4",
     "acorn-jsx": "^5.3.1",
