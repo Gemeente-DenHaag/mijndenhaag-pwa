@@ -1,8 +1,8 @@
 import Grid from '@gemeente-denhaag/grid/Grid'
 import TextField from '@gemeente-denhaag/textfield/TextField'
 import Container from '@gemeente-denhaag/container/Container'
-import { Typography } from '@gemeente-denhaag/datadisplay'
-import { Button } from '@gemeente-denhaag/input'
+import Typography from '@gemeente-denhaag/typography/Typography'
+import Button from '@gemeente-denhaag/button/Button'
 
 import { navigate } from 'gatsby'
 import React, { FormEvent } from 'react'
@@ -12,7 +12,7 @@ const LoginForm: React.FC = () => {
     formSubmitEvent.preventDefault()
 
     // const bsn = formSubmitEvent.target['bsn'].value
-    // BSN should be sent to Gateway to receive JWT for mock login.
+    // TODO: BSN should be sent to Gateway to receive JWT for mock login.
 
     navigate('/index')
   }
@@ -21,7 +21,7 @@ const LoginForm: React.FC = () => {
     formSubmitEvent.preventDefault()
 
     // const kvk = formSubmitEvent.target['kvk'].value
-    // KVK should be sent to Gateway to receive JWT for mock login.
+    // TODO: KVK should be sent to Gateway to receive JWT for mock login.
 
     navigate('/index')
   }
