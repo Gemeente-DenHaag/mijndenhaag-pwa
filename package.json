@@ -3,7 +3,7 @@
   "description": "Progressive Web App based on React and Gatsby for the MijnDenHaag personal environment.",
   "version": "0.1.0",
   "author": "Municipality of The Hague",
-  "license": "MIT",
+  "license": "EUPL-1.2",
   "scripts": {
     "start": "gatsby develop",
     "build": "gatsby build",
