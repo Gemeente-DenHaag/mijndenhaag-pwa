@@ -15,9 +15,12 @@ import Step from '@gemeente-denhaag/step/Step'
 import StepLabel from '@gemeente-denhaag/steplabel/StepLabel'
 import StepContent from '@gemeente-denhaag/stepcontent/StepContent'
 
+import SideNavigation from '@/components/SideNav'
+
 const Home: React.FC<PageProps> = () => (
   <main>
     <Container maxWidth='md'>
+      <SideNavigation />
       <Grid container direction={'column'} justify='space-between' spacing={8}>
         <Grid item>
           <Typography align='inherit' variant='h5'>
