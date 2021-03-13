@@ -1,7 +1,7 @@
 import React from 'react'
 
 // @ts-ignore   This is not a regular component, which ts doesn't like
-import imageFile from '../assets/logo.svg'
+import imageFile from '@/assets/logo.svg'
 import Grid from '@gemeente-denhaag/grid/Grid'
 import FormControl from '@gemeente-denhaag/formcontrol/FormControl'
 import Select from '@gemeente-denhaag/select/Select'
