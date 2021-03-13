@@ -1,5 +1,4 @@
 import React from 'react'
-import { Button } from '@gemeente-denhaag/button/Button'
 
 // @ts-ignore   This is not a regular component, which ts doesn't like
 import imageFile from '../assets/logo.svg'
@@ -9,6 +8,7 @@ import Select from '@gemeente-denhaag/select/Select'
 import Divider from '@gemeente-denhaag/divider/Divider'
 import TextField from '@gemeente-denhaag/textfield/TextField'
 import MenuItem from '@gemeente-denhaag/menuitem/MenuItem'
+import Button from '@gemeente-denhaag/button/Button'
 import AccessibilityNewIcon from '@material-ui/icons/AccessibilityNew'
 
 const Logo: React.FC = () => (
