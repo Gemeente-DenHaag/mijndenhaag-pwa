@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from '@gemeente-denhaag/card/Card'
 import CardContent from '@gemeente-denhaag/cardcontent/CardContent'
+import CardActions from "@gemeente-denhaag/cardactions/CardActions";
 import Typography from '@gemeente-denhaag/typography/Typography'
 import Button from '@gemeente-denhaag/button/Button'
 import Stepper from '@gemeente-denhaag/stepper/Stepper'
@@ -40,9 +41,11 @@ const ZaakCardWrapper: React.FC<ZaakCardWrapperProps> = ({
           {subtitle}
         </Typography>
       )}
-      {children}
-      <Typography variant='body1'>{formatDate(date, locale)}</Typography>
-      <Button>-></Button>
+      {children} 
+      <CardActions>
+        <Typography variant='body1'>{formatDate(date, locale)}</Typography>
+        <Button>-></Button>
+      </CardActions>     
     </CardContent>
   </Card>
 )
