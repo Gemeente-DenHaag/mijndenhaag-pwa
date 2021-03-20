@@ -4,10 +4,6 @@
 
 We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community. Read [our Code of Conduct](CODE_OF_CONDUCT.md) if you have not done so already.
 
-## TL;DR
-
-When you make a PR you will need to sign our [Contributor License Agreement](CLA.md). Make sure to check with your employer if you have permission to sign before contributing.
-
 ## Foundation for Public Code
 
 As an open-source project, to ensure the code remains readable and inviting to contributors, all written code must adhere to the Foundation for Public Code’s [Standard for Public Code](https://standard.publiccode.net/).
@@ -17,7 +13,7 @@ For convenience, all criteria relevant for contributors are listed below, with t
 
 - **[Document the code](https://standard.publiccode.net/criteria/documenting.html)**
   <br />
-  _See the Code docs section for more information on documentation._
+  _See the Code docs section for more information on the documentation._
 
   - All functionality of the codebase MUST be described in language clearly understandable for those that understand the purpose of the code.
   - The documentation of the codebase MUST contain:
@@ -43,4 +39,3 @@ For convenience, all criteria relevant for contributors are listed below, with t
 ## CODE Style
 
 Code style is to be determined.
-
