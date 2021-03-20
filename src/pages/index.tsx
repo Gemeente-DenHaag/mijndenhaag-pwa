@@ -1,22 +1,24 @@
 import React from 'react'
 import { PageProps } from 'gatsby'
 
-import { Button } from '@gemeente-denhaag/nlds-react-components/input/button/Button'
-import { ButtonGroup } from '@gemeente-denhaag/nlds-react-components/input/buttongroup/ButtonGroup'
-import { Checkbox } from '@gemeente-denhaag/nlds-react-components/input/checkbox/Checkbox'
-import { FormControlLabel } from '@gemeente-denhaag/nlds-react-components/input/formcontrollabel/FormControlLabel'
-import { FormGroup } from '@gemeente-denhaag/nlds-react-components/input/formgroup/FormGroup'
-import { Typography } from '@gemeente-denhaag/nlds-react-components/datadisplay/typography/Typography'
-import { Container } from '@gemeente-denhaag/nlds-react-components/layout/container/Container'
-import { Grid } from '@gemeente-denhaag/nlds-react-components/layout/grid/Grid'
+import { Button } from '@gemeente-denhaag/button/Button'
+import { ButtonGroup } from '@gemeente-denhaag/buttongroup/ButtonGroup'
+import { Checkbox } from '@gemeente-denhaag/checkbox/Checkbox'
+import { FormControlLabel } from '@gemeente-denhaag/formcontrollabel/FormControlLabel'
+import { FormGroup } from '@gemeente-denhaag/formgroup/FormGroup'
+import { Typography } from '@gemeente-denhaag/typography/Typography'
+import { Container } from '@gemeente-denhaag/container/Container'
+import { Grid } from '@gemeente-denhaag/grid/Grid'
 
-import Stepper from '@gemeente-denhaag/nlds-react-components/navigation/stepper/Stepper'
-import Step from '@gemeente-denhaag/nlds-react-components/navigation/step/Step'
-import StepLabel from '@gemeente-denhaag/nlds-react-components/navigation/steplabel/StepLabel'
-import StepContent from '@gemeente-denhaag/nlds-react-components/navigation/stepcontent/StepContent'
+import Stepper from '@gemeente-denhaag/stepper/Stepper'
+import Step from '@gemeente-denhaag/step/Step'
+import StepLabel from '@gemeente-denhaag/steplabel/StepLabel'
+import StepContent from '@gemeente-denhaag/stepcontent/StepContent'
+import AppBar from '@gemeente-denhaag/appbar/AppBar'
+
 import Header from '@/components/Header'
-import AppBar from '@gemeente-denhaag/nlds-react-components/surfaces/appbar/AppBar'
 import TopNavigation from '@/components/TopNavigation'
+import SideNavigation from '@/components/SideNav'
 
 const Home: React.FC<PageProps> = () => (
   <main>
@@ -25,6 +27,7 @@ const Home: React.FC<PageProps> = () => (
         <Header />
         <TopNavigation />
       </AppBar>
+      <SideNavigation/>
       <Grid container direction={'column'} justify='space-between' spacing={8}>
         <Grid item>
           <Typography align='inherit' variant='h5'>

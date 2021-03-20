@@ -1,14 +1,14 @@
 import React from 'react'
-import { Button } from '@gemeente-denhaag/nlds-react-components/input/button/Button'
 
 // @ts-ignore   This is not a regular component, which ts doesn't like
-import imageFile from '../assets/logo.svg'
-import Grid from '@gemeente-denhaag/nlds-react-components/layout/grid/Grid'
-import FormControl from '@gemeente-denhaag/nlds-react-components/input/formcontrol/FormControl'
-import Select from '@gemeente-denhaag/nlds-react-components/input/select/Select'
-import Divider from '@gemeente-denhaag/nlds-react-components/datadisplay/divider/Divider'
-import TextField from '@gemeente-denhaag/nlds-react-components/input/textfield/TextField'
-import MenuItem from '@gemeente-denhaag/nlds-react-components/navigation/menuitem/MenuItem'
+import imageFile from '@/assets/logo.svg'
+import Grid from '@gemeente-denhaag/grid/Grid'
+import FormControl from '@gemeente-denhaag/formcontrol/FormControl'
+import Select from '@gemeente-denhaag/select/Select'
+import Divider from '@gemeente-denhaag/divider/Divider'
+import TextField from '@gemeente-denhaag/textfield/TextField'
+import MenuItem from '@gemeente-denhaag/menuitem/MenuItem'
+import Button from '@gemeente-denhaag/button/Button'
 import AccessibilityNewIcon from '@material-ui/icons/AccessibilityNew'
 
 const Logo: React.FC = () => (
@@ -51,9 +51,7 @@ const LanguageButton: React.FC<LanguageButtonProps> = ({
       value={language}
       onChange={handleChange}
     >
-      {/* @ts-ignore   The value property is missing until issue #19 is merged */}
       <MenuItem value={'NL'}>NL</MenuItem>
-      {/* @ts-ignore */}
       <MenuItem value={'EN'}>EN</MenuItem>
     </Select>
   </FormControl>

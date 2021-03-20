@@ -1,8 +1,8 @@
 import React from 'react'
-import { Button } from '@gemeente-denhaag/nlds-react-components/input/button/Button'
+import { Button } from '@gemeente-denhaag/button/Button'
 
-import Grid from '@gemeente-denhaag/nlds-react-components/layout/grid/Grid'
-import Divider from '@gemeente-denhaag/nlds-react-components/datadisplay/divider/Divider'
+import Grid from '@gemeente-denhaag/grid/Grid'
+import Divider from '@gemeente-denhaag/divider/Divider'
 import { Link } from 'gatsby'
 
 const TopNavigation: React.FC = () => (
