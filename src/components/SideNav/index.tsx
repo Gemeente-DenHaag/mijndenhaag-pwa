@@ -49,8 +49,9 @@ const activeStyles = {
 const buildNavigation = (
   navigationItems: NavigationItem[]
 ): React.ReactElement[] => {
-  return navigationItems.map<React.ReactElement>((item) => (
+  return navigationItems.map<React.ReactElement>((item, i) => (
     <ListItem
+      key={i}
       button
       component={Link}
       to={item.to}
