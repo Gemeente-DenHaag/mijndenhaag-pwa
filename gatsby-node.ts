@@ -1,6 +1,6 @@
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env.${process.env.NODE_ENV}`
 })
 
 import path from 'path'
@@ -13,6 +13,20 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     }
   })
 }
+// Implement the Gatsby API “onCreatePage”. This is
+// called after every page is created.
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage } = actions
+
+  // page.matchPath is a special key that's used for matching pages
+  // only on the client.
+  if (page.path.match(/^\/app/)) {
+    page.matchPath = `/app/*`
+
+    // Update the page.
+    createPage(page)
+  }
+}
 
 exports.createPages = async ({ actions, reporter }) => {
   const { createPage } = actions
@@ -20,7 +34,7 @@ exports.createPages = async ({ actions, reporter }) => {
   try {
     // Home page at /home
     let response = await got(`${process.env.MOCK_CONTENT_API_URL}/home`)
-    
+
     let data = JSON.parse(response.body)
     createPage({
       path: data.link,
@@ -30,7 +44,7 @@ exports.createPages = async ({ actions, reporter }) => {
 
     // Help page at /home/help
     response = await got(`${process.env.MOCK_CONTENT_API_URL}/home/help`)
-    
+
     data = JSON.parse(response.body)
 
     createPage({
@@ -41,5 +55,4 @@ exports.createPages = async ({ actions, reporter }) => {
   } catch (error) {
     console.log(error)
   }
-
 }

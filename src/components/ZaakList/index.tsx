@@ -4,23 +4,27 @@ import Typography from '@gemeente-denhaag/typography'
 import Button from '@gemeente-denhaag/button'
 
 import { ZaakListProps } from './types'
+import { ZaakCardProps } from '@/components/ZaakCard'
 
-export const ZaakList: React.FC<ZaakListProps> = ({
+export const ZaakList = ({
   headerText,
   loadMoreText,
   listEmptyText,
   children = [],
   minAmountOfChildren = 4
-}) => {
-  const amountOfChildren = children.length
+}: ZaakListProps) => {
+  if (!Array.isArray(children)) {
+    children = [children]
+  }
+
   const [isCollapsed, setCollapsed] = useState(
-    amountOfChildren > minAmountOfChildren
+    children.length > minAmountOfChildren
   )
 
   return (
     <div>
       <Typography variant='h5'>{headerText}</Typography>
-      {amountOfChildren == 0 && (
+      {children.length == 0 && (
         <Typography variant='body1'>{listEmptyText}</Typography>
       )}
       {isCollapsed ? children.slice(0, minAmountOfChildren) : children}

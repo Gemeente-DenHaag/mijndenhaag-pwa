@@ -28,3 +28,6 @@ yarn-error.log\*
 .vs
 .vscode
 .code-workspace
+
+# logs
+*.log

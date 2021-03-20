@@ -1,7 +1,8 @@
 import React from 'react'
 import { ZaakCardProps } from '@/components/ZaakCard'
+import { RouteComponentProps } from '@reach/router'
 
-export interface ZaakListProps {
+export interface ZaakListProps extends RouteComponentProps {
   /**
    * Text for the header
    */
@@ -17,7 +18,9 @@ export interface ZaakListProps {
   /**
    * All _zaken_ in to display in the overview
    */
-  children?: React.ReactElement<ZaakCardProps>[]
+  children?:
+    | React.ReactElement<ZaakCardProps>[]
+    | React.ReactElement<ZaakCardProps>
   /**
    * Amount of children to display in a collapsed state.
    */
