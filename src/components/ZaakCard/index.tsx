@@ -1,10 +1,10 @@
 import React from 'react'
 import Card from '@gemeente-denhaag/card/Card'
 import CardContent from '@gemeente-denhaag/cardcontent/CardContent'
-import CardActions from "@gemeente-denhaag/cardactions/CardActions";
+import CardActions from '@gemeente-denhaag/cardactions/CardActions'
 import Typography from '@gemeente-denhaag/typography/Typography'
 import Button from '@gemeente-denhaag/button/Button'
-
+import { Link } from 'gatsby'
 import { ZaakCardProps } from './types'
 
 /**
@@ -24,13 +24,13 @@ const formatDate = (dateStr: string, locale?: string): string => {
   })
 }
 
-const ZaakCard: React.FC<ZaakCardProps> = ({
+const ZaakCard = ({
   title,
   date,
   locale,
   subtitle,
   children
-}) => (
+}: ZaakCardProps) => (
   <Card>
     <CardContent>
       <Typography variant='h6'>{title}</Typography>
@@ -39,11 +39,11 @@ const ZaakCard: React.FC<ZaakCardProps> = ({
           {subtitle}
         </Typography>
       )}
-      {children} 
+      {children}
       <CardActions>
         <Typography variant='body1'>{formatDate(date, locale)}</Typography>
-        <Button>-></Button>
-      </CardActions>     
+        <Link to='#'>view card</Link>
+      </CardActions>
     </CardContent>
   </Card>
 )
