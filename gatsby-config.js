@@ -15,12 +15,12 @@ module.exports = {
         display: `standalone`,
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
         icon_options: {
-          purpose: `maskable`,
-        },
-      },
+          purpose: `maskable`
+        }
+      }
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-ts-config`,
-    `gatsby-plugin-material-ui`,
-  ],
+    `gatsby-plugin-material-ui`
+  ]
 }
