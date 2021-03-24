@@ -11,8 +11,8 @@
     "clean": "gatsby clean",
     "type-check": "tsc",
     "generate:specs": "run-s generate:specs:*",
-    "generate:specs:zaak": "npx openapi-typescript https://raw.githubusercontent.com/VNG-Realisatie/zaken-api/master/src/openapi.yaml --output src/types/zaak_schema.ts",
-    "generate:specs:catalogi": "npx openapi-typescript https://raw.githubusercontent.com/VNG-Realisatie/catalogi-api/master/src/openapi.yaml  --output src/types/catalogi_schema.ts"
+    "generate:specs:zaak": "npx openapi-typescript https://raw.githubusercontent.com/VNG-Realisatie/zaken-api/master/src/openapi.yaml --output src/model/openzaak/zaak_schema.ts",
+    "generate:specs:catalogi": "npx openapi-typescript https://raw.githubusercontent.com/VNG-Realisatie/catalogi-api/master/src/openapi.yaml  --output src/model/openzaak/catalogi_schema.ts"
   },
   "dependencies": {
     "@gemeente-denhaag/denhaag-component-library": "^0.1.9",

@@ -16,6 +16,7 @@ public/
 .DS_Store
 .env\*
 .env*
+!.env.example
 
 # debug
 npm-debug.log*

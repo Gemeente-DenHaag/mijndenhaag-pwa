@@ -4,7 +4,8 @@ import Typography from '@gemeente-denhaag/typography'
 
 import ZaakCard, { ZaakCardProps } from '@/components/ZaakCard'
 import { ZaakListProps, ZaakListWrapperProps } from './types'
-import { Zaak } from '@/types'
+import { Zaak, OpenZaakPagination } from '@/model/openzaak'
+import { OpenZaakApi } from '@/utils/api'
 
 const ZaakListWrapper = ({
   headerText,
@@ -49,7 +50,11 @@ const ActiveZaakList: React.FC<ZaakListProps> = ({
   const [zaken, setZaken] = useState<Zaak[]>([])
 
   useEffect(() => {
-    setZaken([]) //TODO connect to API
+    console.log(process.env.API_URL)
+    const token = sessionStorage.getItem('token') //FIXME this should definitly not happen here
+    OpenZaakApi.Get<OpenZaakPagination<Zaak[]>>('/zaken', token)
+      .then((data) => setZaken(data.results))
+      .catch(console.error) //FIXME provide some nice error to the user
   }, [])
 
   return (
@@ -60,13 +65,17 @@ const ActiveZaakList: React.FC<ZaakListProps> = ({
       minAmountOfChildren={minAmountOfChildren}
     >
       {zaken.map<React.ReactElement>((zaak) => (
-        <ZaakCard date={zaak.startdatum} title={zaak.omschrijving}></ZaakCard>
+        <ZaakCard
+          key={zaak.uuid}
+          date={zaak.startdatum}
+          title={zaak.omschrijving}
+        ></ZaakCard>
       ))}
     </ZaakListWrapper>
   )
 }
 
-//TODO: put archived zaken here
+//TODO: put archived zaken component here
 
 export default ActiveZaakList
 export * from './types'
