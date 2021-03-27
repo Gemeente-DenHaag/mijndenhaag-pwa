@@ -16,6 +16,7 @@ public/
 .DS_Store
 .env\*
 .env*
+!.env.example
 
 # debug
 npm-debug.log*
@@ -31,4 +32,4 @@ yarn-error.log\*
 
 #npm / yarn
 .npmrc
-yarn-error.log
+*.log
