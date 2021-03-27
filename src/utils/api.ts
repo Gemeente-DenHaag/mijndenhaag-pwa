@@ -17,7 +17,7 @@ export abstract class OpenZaakApi {
    * @returns {Promise<T>} result from the API request
    */
   public static async get<T>(uri: string, token: string): Promise<T> {
-    const url = new URL(process.env.API_URL, uri).href
+    const url = new URL(uri, process.env.API_URL).href
     const response = await fetch(url, {
       method: 'GET',
       credentials: 'same-origin',
