@@ -50,8 +50,7 @@ const ActiveZaakList: React.FC<ZaakListProps> = ({
   const [zaken, setZaken] = useState<Zaak[]>([])
 
   useEffect(() => {
-    const token = sessionStorage.getItem('token') // FIXME: this should definitly not happen here
-    OpenZaakApi.get<OpenZaakPagination<Zaak[]>>('/zaken', token)
+    OpenZaakApi.getZaken()
       .then((data) => setZaken(data.results))
       .catch(console.error) // TODO: provide some nice error to the user
   }, [])

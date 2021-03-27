@@ -1,3 +1,5 @@
+import { OpenZaakPagination, Zaak } from '@/model/openzaak'
+
 /**
  * Collection of functions to used to make requests to the Open Zaak API gateway.
  */
@@ -16,7 +18,7 @@ export abstract class OpenZaakApi {
    * @param token Bearer auth token, without the Bearer prefix
    * @returns {Promise<T>} result from the API request
    */
-  public static async get<T>(uri: string, token: string): Promise<T> {
+  private static async get<T>(uri: string, token: string): Promise<T> {
     const url = new URL(uri, process.env.API_URL).href
     const response = await fetch(url, {
       method: 'GET',
@@ -34,5 +36,14 @@ export abstract class OpenZaakApi {
     }
 
     return response.json()
+  }
+
+  /**
+   * Makes a request GET to Open Zaak gateway API to retrieve a list of _zaken_
+   * @returns {Promise<OpenZaakPagination<Zaak[]>>} Promise of paginated list of _zaken_
+   */
+  public static async getZaken(): Promise<OpenZaakPagination<Zaak[]>> {
+    const token = sessionStorage.getItem('token') // FIXME: this should definitly not happen here
+    return this.get<OpenZaakPagination<Zaak[]>>('/zaken', token)
   }
 }
