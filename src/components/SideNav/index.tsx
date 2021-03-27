@@ -3,13 +3,8 @@ import { Link } from 'gatsby'
 
 import ListItemText from '@gemeente-denhaag/listitemtext/ListItemText'
 
-//TODO replace this import with our own when
-// https://github.com/Gemeente-DenHaag/denhaag-component-library/issues/101  and
-// https://github.com/Gemeente-DenHaag/denhaag-component-library/issues/102 are fixed.
-import ListItem from '@material-ui/core/ListItem'
-import List from '@material-ui/core/List'
-// import ListItem from '@gemeente-denhaag/listitem/ListItem'
-// import List from '@gemeente-denhaag/list/List'
+import ListItem from '@gemeente-denhaag/listitem/ListItem'
+import List from '@gemeente-denhaag/list/List'
 
 import Icon, {
   HambugerIcon,
@@ -25,7 +20,7 @@ interface NavigationItem {
   to: string
 }
 
-// TODO Temporary styling, remove when design tokens is done.
+// TODO: Temporary styling, remove when design tokens is done.
 // cant set font weight, size and line height, its overriden by MUI
 const linkStyles = {
   textDecoration: 'none',
@@ -36,7 +31,7 @@ const linkStyles = {
   color: '#4B4B4B'
 }
 
-// TODO Temporary styling, remove when design tokens is done.
+// TODO: Temporary styling, remove when design tokens is done.
 // cant set font weight, size and line height, its overriden by MUI
 const activeStyles = {
   fontStyle: 'normal',
@@ -50,28 +45,26 @@ const buildNavigation = (
   navigationItems: NavigationItem[]
 ): React.ReactElement[] => {
   return navigationItems.map<React.ReactElement>((item, i) => (
-    <ListItem
-      key={i}
-      button
-      component={Link}
+    <Link
       to={item.to}
       style={linkStyles}
       activeStyle={activeStyles}
       partiallyActive={true}
-      aria-label={`navigation to ${item.name}`}
     >
-      <Icon
-        icon={item.icon}
-        style={{ marginRight: '17px' }}
-        ariaLabel={`${item.name} icon`}
-      />
-      <ListItemText>{item.name}</ListItemText>
-    </ListItem>
+      <ListItem key={i}>
+        <Icon
+          icon={item.icon}
+          style={{ marginRight: '17px' }}
+          ariaLabel={`${item.name} icon`}
+        />
+        <ListItemText>{item.name}</ListItemText>
+      </ListItem>
+    </Link>
   ))
 }
 
 const SideNavigation: React.FC = () => (
-  <List aria-label='Side Navigation' component='nav'>
+  <List>
     {buildNavigation([
       { name: 'Overzicht', icon: HambugerIcon, to: '/' },
       { name: 'Lopende zaken', icon: ArchiveIcon, to: '#' },
