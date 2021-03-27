@@ -29,11 +29,11 @@ const Home: React.FC<PageProps> = () => (
         <Header />
         <TopNavigation />
       </AppBar>
-      <SideNavigation/>
+      <SideNavigation />
       <ActiveZaakList
-        headerText='bla'
-        listEmptyText='listempty'
-        loadMoreText='loadmore'
+        headerText='Lopende zaken'
+        listEmptyText='Geen zaken'
+        loadMoreText='Bekijk meer'
       />
       <Grid container direction={'column'} justify='space-between' spacing={8}>
         <Grid item>
