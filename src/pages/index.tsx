@@ -18,7 +18,7 @@ import AppBar from '@gemeente-denhaag/appbar/AppBar'
 
 import Header from '@/components/Header'
 import TopNavigation from '@/components/TopNavigation'
-import SideNavigation from '@/components/SideNav'
+import SideNavigation from '@/components/SideNavigation'
 
 import ActiveZaakList from '@/components/ZaakList'
 
