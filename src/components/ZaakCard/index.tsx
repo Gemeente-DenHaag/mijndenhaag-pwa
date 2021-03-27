@@ -26,13 +26,13 @@ const formatDate = (dateStr: string, locale?: string): string => {
   })
 }
 
-const ZaakCard = ({
+const ZaakCard: React.FC<ZaakCardProps> = ({
   title,
   date,
   locale,
   subtitle,
   children
-}: ZaakCardProps) => (
+}) => (
   <Card>
     <CardContent>
       <Typography variant='h6'>{title}</Typography>

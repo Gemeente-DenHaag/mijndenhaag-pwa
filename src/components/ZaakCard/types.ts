@@ -15,8 +15,4 @@ export interface ZaakCardProps {
    * IETF BCP 47 language tag
    */
   locale?: string
-  /**
-   * childeren of the card
-   */
-  children?: React.ReactNode
 }
