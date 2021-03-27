@@ -18,7 +18,7 @@ import AppBar from '@gemeente-denhaag/appbar/AppBar'
 
 import Header from '@/components/Header'
 import TopNavigation from '@/components/TopNavigation'
-import SideNavigation from '@/components/SideNav'
+import SideNavigation from '@/components/SideNavigation'
 
 const Home: React.FC<PageProps> = () => (
   <main>
@@ -27,7 +27,7 @@ const Home: React.FC<PageProps> = () => (
         <Header />
         <TopNavigation />
       </AppBar>
-      <SideNavigation/>
+      <SideNavigation />
       <Grid container direction={'column'} justify='space-between' spacing={8}>
         <Grid item>
           <Typography align='inherit' variant='h5'>
