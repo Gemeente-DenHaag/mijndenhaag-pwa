@@ -15,7 +15,7 @@ const ZaakListWrapper = ({
   minAmountOfChildren = 4
 }: ZaakListWrapperProps) => {
   const [isCollapsed, setCollapsed] = useState(true)
-  let zaakCardElements: React.ReactElement<ZaakCardProps>[] = Array.isArray(
+  const zaakCardElements: React.ReactElement<ZaakCardProps>[] = Array.isArray(
     children
   )
     ? children
@@ -28,7 +28,7 @@ const ZaakListWrapper = ({
   return (
     <div>
       <Typography variant='h5'>{headerText}</Typography>
-      {zaakCardElements.length == 0 && (
+      {zaakCardElements.length === 0 && (
         <Typography variant='body1'>{listEmptyText}</Typography>
       )}
       {isCollapsed
@@ -51,10 +51,10 @@ const ActiveZaakList: React.FC<ZaakListProps> = ({
 
   useEffect(() => {
     console.log(process.env.API_URL)
-    const token = sessionStorage.getItem('token') //FIXME this should definitly not happen here
-    OpenZaakApi.Get<OpenZaakPagination<Zaak[]>>('/zaken', token)
+    const token = sessionStorage.getItem('token') // FIXME: this should definitly not happen here
+    OpenZaakApi.get<OpenZaakPagination<Zaak[]>>('/zaken', token)
       .then((data) => setZaken(data.results))
-      .catch(console.error) //FIXME provide some nice error to the user
+      .catch(console.error) // TODO: provide some nice error to the user
   }, [])
 
   return (
@@ -75,7 +75,7 @@ const ActiveZaakList: React.FC<ZaakListProps> = ({
   )
 }
 
-//TODO: put archived zaken component here
+// TODO: put archived zaken component here
 
 export default ActiveZaakList
 export * from './types'

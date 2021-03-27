@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /**
  * Use this file instead of the schema directly.
  */
